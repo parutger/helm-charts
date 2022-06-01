@@ -5,22 +5,32 @@
 notificationService:
   config: |
     {
-      "accounts": [
-          ["5HEfZ3ehGcDaMXe2SXWH4Dc4hvPSfUDoLL1wyhdeiMCQQd9S", "myaccount"]
-      ],
-      "endpoints": [
-          "wss://westend-rpc.polkadot.io"
-      ],
-      "method_subscription": "all",
-      "reporters": {
-          "console": {}
-      }
+        "accounts": [
+            { "address" : "5HVz83t1pQRWPSQJTGsv2mNot9xFAnq6AU7ncBnwi2JHGWN3", "label": "rbwestend"},
+            { "address" : "5EPGKcQ7yBQyH4cppqXR82FN8ktfmK6rx36c2N2aCJt2YpMe", "label": "rbwestmint"}
+        ],
+        "endpoints": [
+            "wss://westend-rpc.polkadot.io",
+            "wss://westmint-rpc.polkadot.io"
+        ],
+        "eventFilter-x": "all",
+        "eventFilter": [
+            "balances.Transfer",
+            "system.CodeUpdated",
+            "democracy.Passed"
+        ],
+        "matrix": {
+               "userId": "rutger-monitor",
+               "accessToken": "THIS VALUE IS OVERWRITTEN BY ENV MATRIX_TOKEN",
+               "roomId": "!nLqvQVZPHeaKKJvEui:matrix.parity.io",
+               "server": "https://matrix.parity.io"
+        }
     }
 
 replicaCount: 1
 
 image:
-  repository: pbesson/polkadot-basic-notification
+  repository: rbazen/polkadot-notifications
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
