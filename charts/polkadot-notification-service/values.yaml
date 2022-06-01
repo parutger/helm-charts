@@ -6,23 +6,20 @@ notificationService:
   config: |
     {
         "accounts": [
-            { "address" : "5HVz83t1pQRWPSQJTGsv2mNot9xFAnq6AU7ncBnwi2JHGWN3", "label": "rbwestend"},
-            { "address" : "5EPGKcQ7yBQyH4cppqXR82FN8ktfmK6rx36c2N2aCJt2YpMe", "label": "rbwestmint"}
+            { "address" : "5ExampleAccountSS58Address_CHANGE_ME", "label": "EXAMPLE_LABEL"}
         ],
         "endpoints": [
             "wss://westend-rpc.polkadot.io",
             "wss://westmint-rpc.polkadot.io"
         ],
-        "eventFilter-x": "all",
         "eventFilter": [
-            "balances.Transfer",
             "system.CodeUpdated",
             "democracy.Passed"
         ],
         "matrix": {
-               "userId": "rutger-monitor",
+               "userId": "CHANGE_ME",
                "accessToken": "THIS VALUE IS OVERWRITTEN BY ENV MATRIX_TOKEN",
-               "roomId": "!nLqvQVZPHeaKKJvEui:matrix.parity.io",
+               "roomId": "!CHANGE_ME:matrix.parity.io",
                "server": "https://matrix.parity.io"
         }
     }
